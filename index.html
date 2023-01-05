@@ -48,6 +48,48 @@
             float: left;
             text-align: center;
         }
+
+        img {
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* CSS */
+        button {
+            background: #FF4742;
+            border: 1px solid #FF4742;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 16px;
+            min-height: 40px;
+            outline: 0;
+            padding: 12px 14px;
+            text-align: center;
+            text-rendering: geometricprecision;
+            text-transform: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+        }
+
+        button:hover,
+        button:active {
+            background-color: #f3c3c1;
+            background-position: 0 0;
+            color: #FF4742;
+        }
+
+        button:active {
+            opacity: .5;
+        }
     </style>
 </head>
 
@@ -56,7 +98,7 @@
     <div style="width: 100%;">
         <button onclick="addOne()" id="addOne" style="height: fit-conten; width: fit-content;" hidden="true">Add
             player</button>
-        <div id="spelers" style="margin-left: 10%;margin-right: 10%;">
+        <div id="spelers" style="margin-left: 1%;margin-top:5px;margin-right: 1%;">
 
         </div>
     </div>
@@ -65,7 +107,7 @@
         <p style="width: 100%;"> </p>
     </div>
     <div style="background-color: white; text-align: center;opacity: 0.8;" id="radioDIV">
-        <p>Wie doen er mee?</p>
+        <h2>Wie doen er mee?</h2>
         <input type="radio" id="name1" value="Arjan"><label for="name1">Arjan</label><br>
         <input type="radio" id="name2" value="Jelle"><label for="name2">Jelle</label><br>
         <input type="radio" id="name3" value="Kay"><label for="name3">Kay</label><br>
@@ -73,15 +115,21 @@
         <input type="radio" id="name5" value="Ruck"><label for="name5">Ruck</label><br>
         <input type="radio" id="name6" value="Sjoerd"><label for="name6">Sjoerd</label><br>
         <input type="radio" id="name7" value="Stan"><label for="name7">Stan</label><br>
-        <input type="radio" id="name8" value="Waylon"><label for="name8">Waylon</label><br><br>
+        <input type="radio" id="name8" value="Waylon"><label for="name8">Waylon</label><br>
+        <input type="radio" id="name9" value="JP"><label for="name9">JP</label><br>
+        <input type="radio" id="name10" value="Kees"><label for="name10">Kees</label><br>
+        <input type="radio" id="name11" value="Jeroen"><label for="name11">Jeroen</label><br>
+        <input type="radio" id="name12" value="Roan"><label for="name12">Roan</label><br><br>
+        <!-- regel 787 nummer omhoog bij add-->
+        <!-- regel 1167 nummer omhoog bij add-->
     </div>
     <div style=" text-align: center;" id="startDIV">
-        <button onclick="start()" style="height: 100px; width: 40%;">START</button>
+        <button onclick="start()" style="height: 100px; width: 40%;margin-top: 10px;">START</button>
     </div>
     <div style=" text-align: center;" id="AddDIV" hidden="true">
-        <button onclick="add()" style="height: 100px; width: 40%;">ADD</button>
+        <button onclick="add()" style="height: 100px; width: 40%;margin-top: 10px;">ADD</button>
     </div>
-    <div style=" text-align: center;" id="cancelAddDIV" hidden="true">
+    <div style=" text-align: center;margin-top: 10px;" id="cancelAddDIV" hidden="true">
         <button onclick="cancelAddOne()" style="height: 50px; width: 20%;">Cancel</button>
     </div>
 
@@ -295,9 +343,13 @@
             style="border-right: 3px solid black;border-bottom: 3px solid black;">15
         </div>
     </div>
-    <button onclick="next()" id="next" style="height: 100px; width: 10%; margin-left: 10px" hidden="true">Next</button>
-    <button onclick="roll()" id="roll" style="height: 100px; width: 10%; margin-left: 10px;float: right;"
-        hidden="true">roll</button>
+    <div id="roll" hidden="true">
+        <button onclick="next()" style="height: 100px; width: 10%; margin-left: 10px;margin-top: 10px;"
+            hidden="true">Next</button>
+        <button onclick="roll()"
+            style="height: 100px; width: 10%; margin-left: 10px;margin-top: 10px;float: right;">roll</button>
+    </div>
+
     <div style="text-align: center;color: gold;background-color: black; ">
         <h1 id="h2Regels"></h1>
     </div>
@@ -644,17 +696,103 @@
                     "regel": "Je haat buizen. Je mag tot de volgende keer dat je MOET drinken niet aan je glas zitten, doe je dit wel? atje.",
                     "stappen": 0,
                     "special": 0
+                },
+                {
+                    "regel": "3,2,1 hatsikidee. Je bent papa, drink 2 slokken.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Verskrikkelijk versmeerd: verkoop je auto voor 3x de marktprijs, doe een atje of wijs degene aan wie je hem verkocht hebt. Hij is zo dankbaar dat hij een atje doet.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Kijk allemaal op je bankrekening. Degene die het minste geld op de betaalrekening heeft doet 3 slokken. Stan drinkt met je mee voor €1.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Jezus: Anus is herrezen van de dood. Iedereen neemt een slokje om het te vieren.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Knijp in iemand zn billetje. Sjoerd geniet en doet het ook.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Je bent een foodie neem een slok om jezelf te genezen. Ben je flip? Ga dan 3 stappen terug en neem nog 3 slokken.",
+                    "stappen": 0,
+                    "special": 10
+                },
+                {
+                    "regel": "Neem 5 slokken omdat  je  para    bent.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Strippers mien boy! Doe een striptease voor degene tegenover je, er moeten minimaal 4 kledingstukken uit gaan.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Je komt in de badkamer van Soetevent, je volgende gooi is dubbel om zo vel mogelijk bij die versmeerde bende weg te komen.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Sjoerd kent je niet, neem 3 slokken omdat je niet relevant bent.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Doneer als een heer: ben je Stan? Je mag iedereen een tikkie sturen voor een zelf in te vullen bedrag. Hij MOET betaalt worden.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Zet een nummer op. Als jelle de 1e 2 zinnen kan zingen trek je een atje.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Groepsfoto! Maak een groepsfoto, flip mag niet op de foto.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "Piklik sunday! Het is een zomerse zondag middag, lik iemands pik of neem 7 slokken.",
+                    "stappen": 0,
+                    "special": 0
+                },
+                {
+                    "regel": "De leuter van blessing ligt in de weg, skip een beurt.",
+                    "stappen": 0,
+                    "special": 1
+                },
+                {
+                    "regel": "Je hebt net atje kratje gedaan en hebt naast de wc, in de gang, in je broek en in bed gepoept, neem 5 slokken omdat je trots bent.",
+                    "stappen": 0,
+                    "special": 0
                 }
             ]
         }
+        let s = ""
 
-        let ruleL = shuffle(regels.ruleslist)   
+        for (let o in regels.ruleslist) {
+            s += o + ": " + regels.ruleslist[o].regel + "\n"
+        }
+        console.log(s);
+        let ruleL = shuffle(regels.ruleslist)
         let turn = 0
         let trown = false
         let playerlist = []
 
 
         function addPlayer(name, color) {
+            console.log(color);
             playerlist.push({
                 "name": name,
                 "color": color,
@@ -665,7 +803,7 @@
         }
 
         function start() {
-            for (let s = 1; s <= 8; s++) {
+            for (let s = 1; s <= 12; s++) {
                 let radio = document.getElementById("name" + s)
                 console.log(radio.checked);
                 if (radio.checked) {
@@ -677,14 +815,15 @@
             document.getElementById("startDIV").hidden = true
             document.getElementById("board").hidden = false
             document.getElementById("roll").hidden = false
-            document.getElementById("next").hidden = false
             document.getElementById("addOne").hidden = false
             makePlayerCards()
-            for (let index = 0; index < playerlist.length; index++) {
-                addPion(index)
+            if (playerlist.length > 0) {
+                for (let index = 0; index < playerlist.length; index++) {
+                    addPion(index)
+                }
+                let spelersDIV2 = document.getElementById("playerid0")
+                spelersDIV2.style.height = "200px";
             }
-            let spelersDIV2 = document.getElementById("playerid0")
-            spelersDIV2.style.height = "200px";
         }
 
         function move(playerindex, amount) {
@@ -693,8 +832,11 @@
                 playerlist[playerindex].position = 0
             }
             if (playerlist[playerindex].position >= 69) {
-                playerlist[playerindex].position =
+                playerlist[playerindex].position = 69
+
+                setTimeout(() => {
                     endGame()
+                }, "5000")
             }
             doAction(playerlist[playerindex].position)
             let playerPion = document.getElementById("playerpion" + playerindex)
@@ -703,7 +845,7 @@
 
         }
 
-        function doAction(pos) {            
+        function doAction(pos) {
             let currentRule = ruleL[pos]
             document.getElementById('h2Regels').innerHTML = currentRule.regel
             let temp = [
@@ -763,30 +905,38 @@
                     }
                     playerlist[turn].skip = true
                     break;
-
+                case 10:
+                    // "is player flip dan 3 achteruit"
+                    if (playerlist[turn].name == "Phil") {
+                        move(turn, -3)
+                    }
+                    break;
                 default:
                     break;
             }
         }
         function roll() {
-            if (!trown) {
-                let trow = prompt(`Hoeveel gooit ${playerlist[turn].name}`, "");
-                if (trow != null) {
-                    if (7 > parseInt(trow) && 0 < parseInt(trow)) {
-                        trown = true
-                        if (playerlist[turn].double) {
-                            trow = trow * 2
-                            playerlist[turn].double = false
+            if (playerlist.length > 0) {
+
+                if (!trown) {
+                    let trow = prompt(`Hoeveel gooit ${playerlist[turn].name}`, "");
+                    if (trow != null) {
+                        if (7 > parseInt(trow) && 0 < parseInt(trow)) {
+                            trown = true
+                            if (playerlist[turn].double) {
+                                trow = trow * 2
+                                playerlist[turn].double = false
+                            }
+                            move(turn, parseInt(trow))
+                        } else {
+                            alert("cheat meneertje")
                         }
-                        move(turn, parseInt(trow))
                     } else {
-                        alert("cheat meneertje")
+                        alert("Ha! Debiel.")
                     }
                 } else {
-                    alert("Ha! Debiel.")
+                    alert("He doe eemn kalm")
                 }
-            } else {
-                alert("He doe eemn kalm")
             }
         }
 
@@ -842,7 +992,11 @@
         }
 
         function getcolor() {
-            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+            let c = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            while (c.length < 7) {
+                c += 0
+            }
+            return c
         }
 
         function makePlayerCards() {
@@ -855,24 +1009,24 @@
                 playerDiv.style.background = playerlist[index].color;
                 playerDiv.style.color = "white";
                 playerDiv.style.float = "left"
-                playerDiv.style.textAlign = "top";
+                playerDiv.style.textAlign = "center";
                 playerDiv.style.marginLeft = `${10 / playerlist.length}%`
                 playerDiv.style.marginRight = `${10 / playerlist.length}%`
                 playerDiv.id = `playerid${index}`
                 spelersDIV.appendChild(playerDiv);
 
-                var nameP = document.createElement("p");
-                nameP.innerHTML = playerlist[index].name;
-                nameP.style.float = "left"
-                playerDiv.appendChild(nameP);
+                // var nameP = document.createElement("p");
+                // nameP.innerHTML = playerlist[index].name;
+                // nameP.style.float = "left"
+                // playerDiv.appendChild(nameP);
 
 
                 var playerIMG = document.createElement("img");
                 playerIMG.src = `pictures/${playerlist[index].name}.png`
                 playerIMG.alt = playerlist[index].name
-                playerIMG.style.height = "100%"
-                playerIMG.style.width = "70%"
-                playerIMG.style.float = "left"
+                // playerIMG.style.height = "100%"
+                // playerIMG.style.width = "70%"
+                // playerIMG.style.float = "left"
                 playerDiv.appendChild(playerIMG);
             }
         }
@@ -896,7 +1050,6 @@
             document.getElementById("cancelAddDIV").hidden = false
             document.getElementById("board").hidden = true
             document.getElementById("roll").hidden = true
-            document.getElementById("next").hidden = true
         }
 
         function cancelAddOne() {
@@ -906,13 +1059,12 @@
             document.getElementById("spelers").hidden = false
             document.getElementById("board").hidden = false
             document.getElementById("roll").hidden = false
-            document.getElementById("next").hidden = false
         }
 
         function add() {
             document.getElementById("spelers").hidden = false
             document.getElementById("spelers").innerHTML = ""
-            for (let s = 1; s <= 8; s++) {
+            for (let s = 1; s <= 12; s++) {
                 let radio = document.getElementById("name" + s)
                 if (radio.checked) {
                     if (!getPlayers().includes(radio.value)) {
@@ -925,16 +1077,20 @@
             document.getElementById("AddDIV").hidden = true
             document.getElementById("board").hidden = false
             document.getElementById("roll").hidden = false
-            document.getElementById("next").hidden = false
             document.getElementById("addOne").hidden = false
+            document.getElementById("cancelAddDIV").hidden = true
             makePlayerCards()
             let spelersDIV2 = document.getElementById("playerid" + turn)
-            spelersDIV2.style.height = "200px";
+            if (spelersDIV2) {
+                spelersDIV2.style.height = "200px";
+            }
         }
 
         function getPlayers() {
             let list = []
-            lowest = playerlist[0].position
+            if (playerlist > 0) {
+                lowest = playerlist[0].position
+            }
             for (let i = 0; i < playerlist.length; i++) {
                 list.push(playerlist[i].name)
                 if (lowest > playerlist[i].position) {
