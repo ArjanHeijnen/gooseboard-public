@@ -119,7 +119,8 @@
         <input type="radio" id="name9" value="JP"><label for="name9">JP</label><br>
         <input type="radio" id="name10" value="Kees"><label for="name10">Kees</label><br>
         <input type="radio" id="name11" value="Jeroen"><label for="name11">Jeroen</label><br>
-        <input type="radio" id="name12" value="Roan"><label for="name12">Roan</label><br><br>
+        <input type="radio" id="name12" value="Roan"><label for="name12">Roan</label><br>
+        <input type="radio" id="name13" value="Blessing"><label for="name13">Blessing</label><br><br>
         <!-- regel 787 nummer omhoog bij add-->
         <!-- regel 1167 nummer omhoog bij add-->
     </div>
@@ -848,7 +849,7 @@
         }
 
         function start() {
-            for (let s = 1; s <= 12; s++) {
+            for (let s = 1; s <= 13; s++) {
                 let radio = document.getElementById("name" + s)
                 console.log(radio.checked);
                 if (radio.checked) {
@@ -914,6 +915,7 @@
                     if (playerlist[turn].name != "Sjoerd") {
                         for (let i = 0; i < playerlist.length; i++) {
                             if (playerlist[i].name == "Sjoerd") {
+                                
                                 turn = i - 1
                             }
                         }
@@ -1113,7 +1115,7 @@
         function add() {
             document.getElementById("spelers").hidden = false
             document.getElementById("spelers").innerHTML = ""
-            for (let s = 1; s <= 12; s++) {
+            for (let s = 1; s <= 13; s++) {
                 let radio = document.getElementById("name" + s)
                 if (radio.checked) {
                     if (!getPlayers().includes(radio.value)) {
