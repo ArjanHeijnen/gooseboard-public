@@ -91,6 +91,15 @@
             opacity: .5;
         }
     </style>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
+            });
+        }
+    </script>
+    <script defer src="./main.js"></script>
 </head>
 
 <body
@@ -915,7 +924,7 @@
                     if (playerlist[turn].name != "Sjoerd") {
                         for (let i = 0; i < playerlist.length; i++) {
                             if (playerlist[i].name == "Sjoerd") {
-                                
+
                                 turn = i - 1
                             }
                         }
